@@ -7,7 +7,7 @@ public class Drive extends SubsystemBase {
     
     public Drive () {}
 
-    //ports are placeholders actual ports will be found out tomorrow
+    //ports are placeholders actual ports will be found out tomorrow (aka never)
     private static Spark driveLeftMotor1 = new Spark(0);
     private static Spark driveLeftMotor2 = new Spark(1);
     private static Spark driveRightMotor1 = new Spark(2);
