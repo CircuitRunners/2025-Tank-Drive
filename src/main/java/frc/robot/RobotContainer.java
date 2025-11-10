@@ -1,6 +1,6 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.ArcadeDriveCmd;
 import frc.robot.subsystems.Drive;
@@ -8,7 +8,7 @@ import frc.robot.subsystems.Drive;
 public class RobotContainer {
     private final Drive drive = new Drive();
 
-    private final Joystick driverJoy = new Joystick(0);
+    private final XboxController driverJoy = new XboxController(0);
 
     public RobotContainer() {
         //runs arcade drive command when no other command is running on the drive subsystem
