@@ -27,11 +27,8 @@ public class Robot extends TimedRobot {
 
   private double startTime;
 
-
-
   public Robot() {}
 
-private double startTime;
   @Override
   public void robotPeriodic() {}
 
@@ -45,16 +42,16 @@ private double startTime;
 
     double time = Timer.getFPGATimestamp();
     if(time - startTime < 3){
-    leftMotor1.set(0.6);
-    leftMotor2.set(0.6);
-    rightMotor1.set(-0.6);
-    rightMotor2.set(-0.6);
+    leftMotor1.set(ControlMode.PercentOutput, 0.6);
+    leftMotor2.set(ControlMode.PercentOutput, 0.6);
+    rightMotor1.set(ControlMode.PercentOutput, -0.6);
+    rightMotor2.set(ControlMode.PercentOutput, -0.6);
     }
     else{
-    leftMotor1.set(0);
-    leftMotor2.set(0);
-    rightMotor1.set(0);
-    rightMotor2.set(0);
+    leftMotor1.set(ControlMode.PercentOutput, 0);
+    leftMotor2.set(ControlMode.PercentOutput, 0);
+    rightMotor1.set(ControlMode.PercentOutput, 0);
+    rightMotor2.set(ControlMode.PercentOutput, 0);
     }
   }
 
@@ -69,10 +66,10 @@ private double startTime;
     double left = speed + turn;
     double right = speed - turn;
 
-    leftMotor1.set(left);
-    leftMotor2.set(left);
-    rightMotor1.set(-right);
-    rightMotor2.set(-right);
+    leftMotor1.set(ControlMode.PercentOutput, left);
+    leftMotor2.set(ControlMode.PercentOutput, left);
+    rightMotor1.set(ControlMode.PercentOutput, -right);
+    rightMotor2.set(ControlMode.PercentOutput, -right);
   }
 
   @Override
