@@ -8,7 +8,7 @@ import frc.robot.subsystems.Drive;
 public class RobotContainer {
     private final Drive drive = new Drive();
 
-    private final XboxController driverJoy = new XboxController(0);
+    private final XboxController driverJoy = new XboxController(Constants.DriveConstants.controllerPort);
 
     public RobotContainer() {
         //runs arcade drive command when no other command is running on the drive subsystem
