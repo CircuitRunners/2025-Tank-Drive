@@ -9,16 +9,16 @@ import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Pivot;
 
 public class RobotContainer {
+    private final XboxController driverJoy = new XboxController(Constants.driverControllerPort);
+
     private final Drive drive = new Drive();
     private final Pivot pivot = new Pivot();
     private final Cannon cannon = new Cannon();
 
-    private final XboxController driverJoy = new XboxController(Constants.controllerPort);
-
     public RobotContainer() {
         //runs arcade drive command when no other command is running on the drive subsystem
-        drive.setDefaultCommand(new ArcadeDriveCmd(drive, () -> -driverJoy.getRawAxis(Constants.DriveConstants.speedAxis), () -> driverJoy.getRawAxis(Constants.DriveConstants.turnAxis)));
-        pivot.setDefaultCommand(new AimPivot(pivot, () -> driverJoy.getRawAxis(Constants.PivotConstants.pivotAxis)));
+        drive.setDefaultCommand(new ArcadeDriveCmd(drive, () -> -driverJoy.getLeftY(), () -> driverJoy.getLeftX()));
+        pivot.setDefaultCommand(new AimPivot(pivot, () -> driverJoy.getRightY()));
 
         configureBindings();
     }

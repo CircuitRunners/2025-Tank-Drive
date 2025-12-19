@@ -1,8 +1,11 @@
 package frc.robot;
 
+import edu.wpi.first.wpilibj.XboxController;
+
 public final class Constants {
 
-    public static final int controllerPort = 0;
+    //Controller ports (currently placeholders)
+    public static final int driverControllerPort = 0;
 
     public static final class DriveConstants {
         
@@ -11,10 +14,6 @@ public final class Constants {
         public static final int leftMotor2Port = 1;
         public static final int rightMotor1Port = 2; 
         public static final int rightMotor2Port = 3;
-
-        //Controller axis (placeholders)
-        public static final int speedAxis = 1;
-        public static final int turnAxis = 3;
     }
 
     public static final class PivotConstants {
@@ -28,9 +27,6 @@ public final class Constants {
 
         //Conversion factor from encoder rotations to degrees (cuz one rotation is 360 degrees)
         public static final double degreesPerRotation = 360;
-
-        //Controller axis (placeholders)
-        public static final int pivotAxis = 5;
     }
 
     public static final class CannonConstants {}
