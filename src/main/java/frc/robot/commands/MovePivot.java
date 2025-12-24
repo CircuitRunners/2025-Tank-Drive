@@ -30,7 +30,7 @@ public class MovePivot extends Command {
 
     @Override
     public void end(boolean interrupted) {
-        System.out.println("Moving Pivot command finished")
+        System.out.println("Moving Pivot command finished");
     }
 
     @Override
