@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -9,9 +10,9 @@ import frc.robot.Constants;
 public class DriveSubsystem extends SubsystemBase {
 
     private VictorSPX leftMotor1 = new VictorSPX(Constants.DriveSubConstants.leftMotor1Port);
-    private VictorSPX leftMotor2 = new VictorSPX(Constants.DriveSubConstants.leftMotor2Port);
+    private TalonSRX leftMotor2 = new TalonSRX(Constants.DriveSubConstants.leftMotor2Port);
     private VictorSPX rightMotor1 = new VictorSPX(Constants.DriveSubConstants.rightMotor1Port);
-    private VictorSPX rightMotor2 = new VictorSPX(Constants.DriveSubConstants.rightMotor2Port);
+    private TalonSRX rightMotor2 = new TalonSRX(Constants.DriveSubConstants.rightMotor2Port);
 
     public DriveSubsystem() {
 
