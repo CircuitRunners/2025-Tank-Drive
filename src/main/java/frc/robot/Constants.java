@@ -25,5 +25,10 @@ public final class Constants {
         public static final int upperLimit = 67;
     }
 
+    public static final class PneumaticSubConstants {
+        public static final int forwardChannel = 0;
+        public static final int reverseChannel = 1;
+    }
+
     
 }

@@ -4,12 +4,13 @@ import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class PneumaticSubsystem extends SubsystemBase {
 
     // im 99% sure we use ctre
     private final Compressor compress = new Compressor(PneumaticsModuleType.CTREPCM);
-    private final DoubleSolenoid solenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 0, 1);
+    private final DoubleSolenoid solenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.PneumaticSubConstants.forwardChannel, Constants.PneumaticSubConstants.reverseChannel);
 
     public PneumaticSubsystem() {
         
@@ -25,14 +26,20 @@ public class PneumaticSubsystem extends SubsystemBase {
     }
 
     // controls which side of the solenoid releases air
-    public void setSolenoidState(int side) {
-        if (side == 1) {
+    public void activateSolenoid(int channel) {
+        if (channel == 1) {
             solenoid.set(DoubleSolenoid.Value.kForward);
-        } else if (side == 2) {
+        } else if (channel == 2) {
             solenoid.set(DoubleSolenoid.Value.kReverse);
         }
     }
 
+    // method to stop releasing air
+    public void disableSolenoid() {
+        solenoid.set(DoubleSolenoid.Value.kOff);
+    }
+
+    
 
     
 }
