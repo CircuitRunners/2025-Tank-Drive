@@ -17,6 +17,8 @@ public class PneumaticSubsystem extends SubsystemBase {
     }
 
     // disable or enable compressor
+    // by default, the compressor automatically turns off once it reaches 120 psi and turns back on when it goes below the threshold.
+    // in case we need to manually disable it, just call this method with a value of true or false.
     public void setCompressorState(boolean desiredState) {
         if (desiredState) {
             compress.enableDigital();

@@ -3,12 +3,14 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.PneumaticSubsystem;
 
-public class LaunchLeft extends Command {
+public class LaunchShooter extends Command {
     
     private PneumaticSubsystem pneumaticSubsystem;
+    private int channelToLaunch;
 
-    public LaunchLeft(PneumaticSubsystem pneumaticSub) {
+    public LaunchShooter(PneumaticSubsystem pneumaticSub, int channel) {
         pneumaticSubsystem = pneumaticSub;
+        channelToLaunch = channel;
         addRequirements(pneumaticSubsystem);
     }
 
@@ -19,12 +21,12 @@ public class LaunchLeft extends Command {
 
     @Override
     public void execute() {
-        pneumaticSubsystem.activateSolenoid(1);
+        pneumaticSubsystem.activateSolenoid(channelToLaunch);
     }
 
     @Override
     public void end(boolean interrupted) {
-        System.out.println("Left side launched");
+        System.out.println("Channel " + channelToLaunch + " launched");
     }
 
     @Override
