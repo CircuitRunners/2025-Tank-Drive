@@ -1,7 +1,5 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.XboxController;
-
 public final class Constants {
 
     //Controller ports (currently placeholders)
@@ -29,5 +27,10 @@ public final class Constants {
         public static final double degreesPerRotation = 360;
     }
 
-    public static final class CannonConstants {}
+    public static final class CannonConstants {
+
+        //Ports (currently placeholders)
+        public static final int doubleSolenoidPort1 = 0;
+        public static final int doubleSolenoidPort2 = 1;
+    }
 }

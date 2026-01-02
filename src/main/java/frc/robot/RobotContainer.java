@@ -2,8 +2,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.AimPivot;
 import frc.robot.commands.ArcadeDriveCmd;
+import frc.robot.commands.DeactivateSolenoidCmd;
+import frc.robot.commands.FireCannonCmd;
 import frc.robot.subsystems.Cannon;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Pivot;
@@ -24,7 +27,9 @@ public class RobotContainer {
     }
 
     public void configureBindings() {
-        
+        driverJoy.leftBumper().onTrue(new FireCannonCmd(cannon, 0));
+        driverJoy.rightBumper().onTrue(new FireCannonCmd(cannon, 1));
+        driverJoy.y().onTrue(new DeactivateSolenoidCmd(cannon));
     }
 
     public Command getAutonomousCommand() {

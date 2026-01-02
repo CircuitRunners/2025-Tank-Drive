@@ -3,14 +3,12 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Cannon;
 
-public class FireCannonCmd extends Command {
+public class DeactivateSolenoidCmd extends Command {
 
     private final Cannon cannon;
-    private int channel;
 
-    public FireCannonCmd(Cannon cannon, int channel) {
+    public DeactivateSolenoidCmd(Cannon cannon) {
         this.cannon = cannon;
-        this.channel = channel;
         //makes sure cannon is not double scheduled
         addRequirements(cannon);
     }
@@ -20,12 +18,12 @@ public class FireCannonCmd extends Command {
 
     @Override
     public void execute() {
-        cannon.activateSolenoid(channel);
+        cannon.disableSolenoid();
     }
 
     @Override
     public void end(boolean interrupted) {
-        System.out.println("FireCannonCmd ended!");
+        System.out.println("DeactivateSolenoidCmd ended!");
     }
 
     @Override
