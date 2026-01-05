@@ -1,17 +1,19 @@
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
+
+
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class DriveSubsystem extends SubsystemBase {
 
-    private VictorSPX leftMotor1 = new VictorSPX(Constants.DriveSubConstants.leftMotor1Port);
-    private VictorSPX leftMotor2 = new VictorSPX(Constants.DriveSubConstants.leftMotor2Port);
-    private VictorSPX rightMotor1 = new VictorSPX(Constants.DriveSubConstants.rightMotor1Port);
-    private VictorSPX rightMotor2 = new VictorSPX(Constants.DriveSubConstants.rightMotor2Port);
+    private static SparkMax leftMotor1 = new SparkMax(Constants.DriveSubConstants.leftMotor1Port, MotorType.kBrushed);
+    private static SparkMax leftMotor2 = new SparkMax(Constants.DriveSubConstants.leftMotor2Port, MotorType.kBrushed);
+    private static SparkMax rightMotor1 = new SparkMax(Constants.DriveSubConstants.rightMotor1Port, MotorType.kBrushed);
+    private static SparkMax rightMotor2 = new SparkMax(Constants.DriveSubConstants.rightMotor2Port, MotorType.kBrushed);
 
     public DriveSubsystem() {
 
