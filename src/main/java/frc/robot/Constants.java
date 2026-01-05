@@ -15,5 +15,7 @@ public final class Constants {
 
     }
 
-    
+    // public static 
+
+    // make every variable public static final :)
 }
