@@ -20,6 +20,13 @@ public final class Constants {
         public static final double maxAngleValue = 90;
         public static final double minAngleValue = 0;
 
+
+    }
+
+    public static final class CannonConstants {
+        public static final int doubleSolenoidPort1 = 0;
+        public static final int doubleSolenoidPort2 = 1;
+
     }
 
     // make every variable public static final :)
