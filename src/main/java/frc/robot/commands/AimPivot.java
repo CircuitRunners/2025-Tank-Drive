@@ -8,10 +8,10 @@ import frc.robot.subsystems.Pivot;
 public class AimPivot extends Command {
 
     private final Pivot pivot;
-    private final Supplier<Double> angleFunction;
+    private final Supplier<Double> speedFunction;
 
-    public AimPivot(Pivot pivot, Supplier<Double> angleFunction) {
-        this.angleFunction = angleFunction;
+    public AimPivot(Pivot pivot, Supplier<Double> speedFunction) {
+        this.speedFunction = speedFunction;
         this.pivot = pivot;
         //makes sure pivot is not double scheduled
         addRequirements(pivot);
@@ -22,9 +22,9 @@ public class AimPivot extends Command {
 
     @Override
     public void execute() {
-        double angle = angleFunction.get();
+        double speed = speedFunction.get();
         
-        pivot.setMotor(angle);
+        pivot.setMotor(speed);
     }
 
     @Override

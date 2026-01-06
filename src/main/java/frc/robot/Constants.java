@@ -25,6 +25,14 @@ public final class Constants {
 
         //Conversion factor from encoder rotations to degrees (cuz one rotation is 360 degrees)
         public static final double degreesPerRotation = 360;
+
+        //PID Constants (placeholders)
+        public static final double kP = 0.1;
+        public static final double kI = 0.0;
+        public static final double kD = 0.0;
+
+        //Custom setpoint angle (change to whatever driver wants)
+        public static final double customSetpointAngle = 45.0;
     }
 
     public static final class CannonConstants {
