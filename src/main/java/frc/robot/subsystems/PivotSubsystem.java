@@ -7,6 +7,7 @@ import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkAbsoluteEncoder;
 
 public class PivotSubsystem extends SubsystemBase{
+
     public PivotSubsystem()
     {
         
