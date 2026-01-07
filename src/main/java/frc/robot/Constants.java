@@ -21,7 +21,7 @@ public final class Constants {
 
         //Angle limit placeholders (in degrees)
         public static final double pivotMinAngle = 0.0;
-        public static final double pivotMaxAngle = 120.0;
+        public static final double pivotMaxAngle = 90.0;
 
         //Conversion factor from encoder rotations to degrees (cuz one rotation is 360 degrees)
         public static final double degreesPerRotation = 360;
