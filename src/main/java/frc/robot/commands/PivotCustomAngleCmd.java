@@ -8,12 +8,10 @@ import frc.robot.subsystems.Pivot;
 public class PivotCustomAngleCmd extends Command {
 
     private final Pivot pivot;
-    private final double angle;
     private final PIDController pid = new PIDController(Constants.PivotConstants.kP, Constants.PivotConstants.kI, Constants.PivotConstants.kD);
 
     public PivotCustomAngleCmd(Pivot pivot) {
         this.pivot = pivot;
-        angle = pivot.getDegrees();
         //makes sure pivot is not double scheduled
         addRequirements(pivot);
     }
